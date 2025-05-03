@@ -1,0 +1,26 @@
+//  Button
+@use "./../sass-utils/Variables/variable.scss";
+
+// Button Component Styles
+%base-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-family: variable.$myFont;
+    font-size: variable.$myFontSize;
+    background-color: variable.$grayColor;
+    color: black;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    
+    &:hover {
+        opacity: 0.9;
+    }
+    
+    &:focus {
+        outline: none;
+    }
+}

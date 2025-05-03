@@ -1,0 +1,221 @@
+@use "./sass-utils/Variables/variable.scss";
+@use "./sass-utils/Function/function";
+@use "./components/buttons";
+@import "./base/reset";
+
+// Base button placeholder
+.section__title {
+    font-size: function.rem-calc(24px);
+    font-family: variable.$myFont;
+    font-weight: variable.$myFontWeight;
+    margin-bottom: 20px;
+}
+.section__dec {
+    font-size: function.rem-calc(16px);
+    font-family: variable.$myFont;
+    font-weight: variable.$myFontWeight;
+    margin-bottom: 20px;
+}
+.navbar {
+    background-color: variable.$whiteColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .logo {
+        font-family: variable.$myFont;
+        font-size: 14px;
+        letter-spacing: 5px;
+        padding: 10px 20px;
+        display: inline-block;
+        &:hover {
+            background-color: variable.$grayColor;
+        }
+    }
+    .nav-links {
+        display: flex;
+        list-style: none;
+        li {
+            font-family: variable.$myFont;
+            font-size: variable.$myFontSize;
+            &:hover {
+                background-color: variable.$grayColor;
+            }
+            a {
+                @extend .logo;
+                letter-spacing: 0;
+            }
+        }
+    }
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    height: 100vh;
+    background-image: url("./../assets/images/mac.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    .hero__title {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+    .hero__dec {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    .btn {
+        @extend %base-button;
+    }
+}
+
+.about {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: variable.$whiteColor;
+    color: black;
+    .about__title {
+        font-size: function.rem-calc(24px);
+        margin-bottom: 20px;
+    }
+    .about__dec {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    .about__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        .quarter {
+            width: function.column-width(3);
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            i {
+                font-size: function.rem-calc(40px);
+                margin-bottom: 10px;
+            }
+            .about__container--title {
+                font-size: function.rem-calc(15px);
+                margin-bottom: 20px;
+                font-weight: 400;
+            }
+            .about__container--text {
+                font-size: function.rem-calc(12px);
+                margin-bottom: 10px;
+                font-weight: 200;
+            }
+        }
+    }
+}
+
+.know {
+    background-color: #f1f1f1;
+    padding: 100px 20px;
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+    .know__title {
+        font-size: function.rem-calc(24px);
+        margin-bottom: 20px;
+    }
+    .know__dec {
+        font-size: function.rem-calc(16px);
+        margin-bottom: 20px;
+    }
+    .btn {
+        @extend %base-button;
+        font-size: function.rem-calc(12px);
+        padding: 5px 10px;
+        background-color: black;
+        color: white;
+        &:hover {
+            background-color: variable.$grayColor;
+            color: black;
+        }
+    }
+    .know__img {
+        width: function.column-width(5);
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    }
+}
+
+.team {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: variable.$whiteColor;
+    color: black;
+    .section__dec {
+        font-size: function.rem-calc(16px);
+        margin-bottom: 40px;
+    }
+    .team__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        .team__container {
+            background-color: variable.$whiteColor;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            .team__img {
+                margin-bottom: 20px;
+                img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 5px;
+                }
+            }
+            .team__name {
+                font-size: function.rem-calc(20px);
+
+                font-weight: 400;
+            }
+            .team__dec {
+                font-size: function.rem-calc(12px);
+                margin: 20px 0px;
+                font-weight: 700;
+                color: variable.$grayColor;
+            }
+            .team__text {
+                font-size: function.rem-calc(12px);
+                margin-bottom: 10px;
+                font-weight: 200;
+            }
+            a {
+                @extend %base-button;
+                font-size: function.rem-calc(12px);
+                padding: 5px 10px;
+                background-color: black;
+                color: white;
+                &:hover {
+                    background-color: variable.$grayColor;
+                    color: black;
+                }
+            }
+        }
+    }
+}
